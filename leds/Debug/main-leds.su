@@ -8,9 +8,7 @@
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalIn.h:128:5:mbed::DigitalIn::operator int()	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalOut.h:62:5:mbed::DigitalOut::DigitalOut(PinName)	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalOut.h:84:10:void mbed::DigitalOut::write(int)	16	static
-/home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalOut.h:96:9:int mbed::DigitalOut::read()	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalOut.h:122:17:mbed::DigitalOut& mbed::DigitalOut::operator=(int)	16	static
-/home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalOut.h:143:5:mbed::DigitalOut::operator int()	16	static
 ../main-leds.cpp:13:2:ledcontrols::ledcontrols(PinName)	16	static
 ../main-leds.cpp:18:7:void ledcontrols::set_brightness(float)	16	static
 ../main-leds.cpp:27:7:void ledcontrols::turnOff()	8	static
@@ -47,5 +45,5 @@
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/cxxsupport/mstd_functional:42:29:) [with F = void (*&)(); Args = {}]	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/cxxsupport/mstd_type_traits:385:6:) [with F = void (*&)(); Args = {}]	16	static
 ../main-leds.cpp:106:16:void __tcf_0(void*)	16	static
-../main-leds.cpp:210:1:void __static_initialization_and_destruction_0(int, int)	16	static
-../main-leds.cpp:210:1:cpp)	8	static
+../main-leds.cpp:207:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../main-leds.cpp:207:1:cpp)	8	static

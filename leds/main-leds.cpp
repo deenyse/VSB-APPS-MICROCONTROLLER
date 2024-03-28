@@ -125,9 +125,6 @@ int main() {
 	Ticker r_ticker;
 	r_ticker.attach(callback(allRgbLightsControl), 1ms);
 
-	for (int i = 0; i < 3; i++) {
-		butt[i].usedActiveState();
-	}
 
 	for (int i = 0; i < 3; i++) {
 		rgb_light_led[i].turnOff();
@@ -179,15 +176,15 @@ int main() {
 					g_red_led[i].turnOff();
 				for (int i = 0; i < 3; i++)
 					rgb_light_led[i].turnOn();
-
+				status_leds[1] = 1;
 			} else {
 				for (int i = 0; i < 3; i++)
 					rgb_light_led[i].turnOff();
 				for (int i = 0; i < 8; i++)
 					g_red_led[i].turnOn();
+				status_leds[1] = 0;
 			}
 			isLed = !isLed;
-			status_leds[1] = !status_leds[1];
 			butt[3].usedActiveState();
 		} else if (butt[2].getIsActive()) {
 			if (isLed)
