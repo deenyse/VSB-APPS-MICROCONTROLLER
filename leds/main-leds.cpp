@@ -1,5 +1,4 @@
 #include "mbed.h"
-#define RGBAMOUNT 9;
 class ledcontrols {
 private:
 
@@ -54,45 +53,7 @@ public:
 	}
 };
 
-class button_control {
-private:
-	DigitalIn m_butt; // current is pressed state
-	bool previousState = 0; // previous is pressed state
-	bool isActive = 0; //changes to opposite every release
 
-public:
-
-	button_control(PinName button) :
-			m_butt(button) {
-	}
-	;
-	bool getIsActive() {
-		return this->isActive;
-	}
-	;
-
-	bool getPressStatus() {
-		return this->m_butt;
-	}
-	;
-
-	void usedActiveState() {
-		this->isActive = 0;
-	}
-	void updateState() {
-		if (!this->m_butt && this->previousState) { // if pressed
-			this->previousState = 0;
-			this->isActive = !this->isActive;
-
-		}
-		if (this->m_butt && !this->previousState) // if released
-				{
-			this->previousState = 1;
-		}
-	}
-	;
-
-};
 
 //DigitalOut rgb_leds[3][3] = { { PTB2, PTB3, PTB9 }, { PTB19, PTB20, PTB23 }, {PTB10, PTB11, PTB18 } };
 
