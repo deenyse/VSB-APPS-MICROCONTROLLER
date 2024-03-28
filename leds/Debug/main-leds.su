@@ -1,25 +1,31 @@
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/new:174:33:void* operator new(std::size_t, void*)	8	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/arm-none-eabi/thumb/v7e-m+fp/softfp/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	8	static
+/home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalIn.h:67:5:mbed::DigitalIn::DigitalIn(PinName)	16	static
+/home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalIn.h:86:5:mbed::DigitalIn::~DigitalIn()	16	static
+/home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalIn.h:97:9:int mbed::DigitalIn::read()	16	static
+/home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalIn.h:128:5:mbed::DigitalIn::operator int()	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalOut.h:62:5:mbed::DigitalOut::DigitalOut(PinName)	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/DigitalOut.h:84:10:void mbed::DigitalOut::write(int)	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/Ticker.h:133:5:mbed::TickerBase::~TickerBase()	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/drivers/include/drivers/Ticker.h:161:7:mbed::Ticker::~Ticker()	16	static
-../main-leds.cpp:14:5:ledcontrols::ledcontrols(PinName)	112	static
-../main-leds.cpp:19:10:void ledcontrols::ticker_brightness()	24	static
-../main-leds.cpp:42:10:void ledcontrols::pwm()	16	static
+../main-leds.cpp:13:2:ledcontrols::ledcontrols(PinName)	72	static
+../main-leds.cpp:18:7:void ledcontrols::set_brightness(float)	8	static
+../main-leds.cpp:26:7:void ledcontrols::pwm()	16	static
+../main-leds.cpp:48:2:button_control::button_control(PinName)	16	static
+../main-leds.cpp:52:7:bool button_control::getIsActive()	8	static
+../main-leds.cpp:56:7:void button_control::updateState()	16	static
 ../main-leds.cpp:3:7:ledcontrols::~ledcontrols()	16	static
-../main-leds.cpp:59:5:int main()	0	static
+../main-leds.cpp:40:7:button_control::~button_control()	16	static
+../main-leds.cpp:75:5:int main()	16	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:578:2:constexpr std::chrono::duration<_Rep, _Period>::rep std::chrono::duration<_Rep, _Period>::count() const [with _Rep = long long int; _Period = std::ratio<1, 1000000>]	8	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/include/platform/Callback.h:712:23:)) [with T = ledcontrols; U = ledcontrols; R = void; ArgTs = {}]	24	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:1396:7:_Digits = {'1'}]	16	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:570:14:constexpr std::chrono::duration<_Rep, _Period>::duration(const std::chrono::duration<_Rep, _Period>&) [with _Rep2 = long long int; _Period2 = std::ratio<1, 1000>; <template-parameter-2-3> = void; _Rep = long long int; _Period = std::ratio<1, 1000000>]	24	static
-/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:1396:7:_Digits = {'5'}]	16	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:578:2:constexpr std::chrono::duration<_Rep, _Period>::rep std::chrono::duration<_Rep, _Period>::count() const [with _Rep = long long int; _Period = std::ratio<1, 1000>]	8	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/include/platform/Callback.h:353:18:mbed::Callback<void()>::Callback<ledcontrols*, void (ledcontrols::*)()>(ledcontrols*, void (ledcontrols::*)())::<lambda()>	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/include/platform/Callback.h:351:5:>::value, int>::type <anonymous> = 0; R = void; ArgTs = {}]	40	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:1345:22:_Digits = {'1'}]	24	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:262:7:constexpr std::chrono::__enable_if_is_duration<_ToDur> std::chrono::duration_cast(const duration<_Rep, _Period>&) [with _ToDur = duration<long long int, std::ratio<1, 1000000> >; _Rep = long long int; _Period = std::ratio<1, 1000>]	16	static
-/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:1345:22:_Digits = {'5'}]	24	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:562:23:constexpr std::chrono::duration<_Rep, _Period>::duration(const _Rep2&) [with _Rep2 = long long int; <template-parameter-2-2> = void; _Rep = long long int; _Period = std::ratio<1, 1000>]	8	static
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/chrono.h:562:23:constexpr std::chrono::duration<_Rep, _Period>::duration(const _Rep2&) [with _Rep2 = long long int; <template-parameter-2-2> = void; _Rep = long long int; _Period = std::ratio<1, 1000000>]	8	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/include/platform/Callback.h:120:3:) [with R = void; F = void (ledcontrols::* const&)(); Args = {ledcontrols* const&}; typename std::enable_if<std::is_void< <template-parameter-1-1> >::value, int>::type <anonymous> = 0]	16	static
@@ -35,6 +41,7 @@
 /usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/bits/move.h:77:5:constexpr _Tp&& std::forward(typename remove_reference<_Tp>::type&) [with _Tp = mbed::Callback<void()>::Callback<ledcontrols*, void (ledcontrols::*)()>(ledcontrols*, void (ledcontrols::*)())::<lambda()>&]	8	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/cxxsupport/mstd_functional:42:29:) [with F = mbed::Callback<void()>::Callback<ledcontrols*, void (ledcontrols::*)()>(ledcontrols*, void (ledcontrols::*)())::<lambda()>&; Args = {}]	16	static
 /home/fei/yat0008/Desktop/controller/leds/mbed-os/platform/cxxsupport/mstd_type_traits:385:6:) [with F = mbed::Callback<void()>::Callback<ledcontrols*, void (ledcontrols::*)()>(ledcontrols*, void (ledcontrols::*)())::<lambda()>&; Args = {}]	16	static
-../main-leds.cpp:56:13:void __tcf_0(void*)	16	static
-../main-leds.cpp:61:1:void __static_initialization_and_destruction_0(int, int)	16	static
-../main-leds.cpp:61:1:cpp)	8	static
+../main-leds.cpp:70:13:void __tcf_0(void*)	16	static
+../main-leds.cpp:73:16:void __tcf_1(void*)	16	static
+../main-leds.cpp:89:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../main-leds.cpp:89:1:cpp)	8	static
