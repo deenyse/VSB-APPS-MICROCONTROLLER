@@ -1,0 +1,20 @@
+/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/arm-none-eabi/thumb/v7e-m+fp/softfp/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	8	static
+/home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:67:5:mbed::DigitalIn::DigitalIn(PinName)	16	static
+/home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:86:5:mbed::DigitalIn::~DigitalIn()	16	static
+/home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:97:9:int mbed::DigitalIn::read()	16	static
+/home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:128:5:mbed::DigitalIn::operator int()	16	static
+/home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalOut.h:73:5:mbed::DigitalOut::DigitalOut(PinName, int)	24	static
+../main-lcd.cpp:23:2:button_control::button_control(PinName)	16	static
+../main-lcd.cpp:40:7:void button_control::updateState()	16	static
+../main-lcd.cpp:15:7:button_control::~button_control()	16	static
+../main-lcd.cpp:57:10:uint16_t rgb888_to_rgb565(uint32_t)	24	static
+../main-lcd.cpp:74:6:void drawChar(int, int, int, int, const uint16_t*, uint16_t)	32	static
+../main-lcd.cpp:87:6:void drawFont(int, int, uint16_t)	40	static
+../main-lcd.cpp:96:6:void drawRectangle(int, int, int, int, uint16_t)	32	static
+../main-lcd.cpp:108:6:void drawCircle(int, int, int, uint16_t)	40	static
+../main-lcd.cpp:135:6:void drawLine(int, int, int, int, uint16_t)	48	static
+../main-lcd.cpp:168:6:void drawTriangle(int, int, int, int, int, int, uint16_t)	32	static
+../main-lcd.cpp:174:5:int main()	40	static
+../main-lcd.cpp:55:16:void __tcf_0(void*)	16	static
+../main-lcd.cpp:195:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../main-lcd.cpp:195:1:cpp)	8	static
