@@ -2,19 +2,15 @@
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:67:5:mbed::DigitalIn::DigitalIn(PinName)	16	static
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:86:5:mbed::DigitalIn::~DigitalIn()	16	static
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:97:9:int mbed::DigitalIn::read()	16	static
-/home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalIn.h:128:5:mbed::DigitalIn::operator int()	16	static
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalOut.h:73:5:mbed::DigitalOut::DigitalOut(PinName, int)	24	static
-../main-lcd.cpp:23:2:button_control::button_control(PinName)	16	static
-../main-lcd.cpp:40:7:void button_control::updateState()	16	static
-../main-lcd.cpp:15:7:button_control::~button_control()	16	static
-../main-lcd.cpp:57:10:uint16_t rgb888_to_rgb565(uint32_t)	24	static
-../main-lcd.cpp:74:6:void drawChar(int, int, int, int, const uint16_t*, uint16_t)	32	static
-../main-lcd.cpp:87:6:void drawFont(int, int, uint16_t)	40	static
-../main-lcd.cpp:96:6:void drawRectangle(int, int, int, int, uint16_t)	32	static
-../main-lcd.cpp:108:6:void drawCircle(int, int, int, uint16_t)	40	static
-../main-lcd.cpp:135:6:void drawLine(int, int, int, int, uint16_t)	48	static
-../main-lcd.cpp:168:6:void drawTriangle(int, int, int, int, int, int, uint16_t)	32	static
-../main-lcd.cpp:174:5:int main()	40	static
-../main-lcd.cpp:55:16:void __tcf_0(void*)	16	static
-../main-lcd.cpp:195:1:void __static_initialization_and_destruction_0(int, int)	16	static
-../main-lcd.cpp:195:1:cpp)	8	static
+../main-lcd.cpp:16:10:uint16_t rgb888_to_rgb565(uint32_t)	24	static
+../main-lcd.cpp:33:6:void drawChar(int, int, int, int, const uint16_t*, uint16_t)	32	static
+../main-lcd.cpp:46:6:void drawFont(int, int, uint16_t, const uint16_t (*)[16])	40	static
+../main-lcd.cpp:56:6:void drawRectangle(int, int, int, int, uint16_t)	32	static
+../main-lcd.cpp:68:6:void drawCircle(int, int, int, uint16_t)	40	static
+../main-lcd.cpp:95:6:void drawLine(int, int, int, int, uint16_t)	48	static
+../main-lcd.cpp:133:6:void drawTriangle(int, int, int, int, int, int, uint16_t)	32	static
+../main-lcd.cpp:140:5:int main()	40	static
+../main-lcd.cpp:14:11:void __tcf_0(void*)	16	static
+../main-lcd.cpp:209:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../main-lcd.cpp:209:1:cpp)	8	static

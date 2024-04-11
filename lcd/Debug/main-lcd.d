@@ -161,7 +161,7 @@ main-lcd.o main-lcd.d: ../main-lcd.cpp \
  /home/fei/yat0008/Desktop/controller/lcd/mbed-os/platform/include/platform/Stream.h \
  /home/fei/yat0008/Desktop/controller/lcd/mbed-os/platform/include/platform/FileLike.h \
  /home/fei/yat0008/Desktop/controller/lcd/mbed-os/platform/include/platform/FileBase.h \
- ../lcd_lib.h ../fonts/font10x16_lsb.h
+ ../lcd_lib.h ../fonts/font10x16_lsb.h ../fonts/font10x16_msb.h
 /home/fei/yat0008/Desktop/controller/lcd/mbed_config.h:
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/mbed.h:
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/platform/include/platform/mbed_version.h:
@@ -326,3 +326,4 @@ main-lcd.o main-lcd.d: ../main-lcd.cpp \
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/platform/include/platform/FileBase.h:
 ../lcd_lib.h:
 ../fonts/font10x16_lsb.h:
+../fonts/font10x16_msb.h:
