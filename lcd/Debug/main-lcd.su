@@ -5,12 +5,20 @@
 /home/fei/yat0008/Desktop/controller/lcd/mbed-os/drivers/include/drivers/DigitalOut.h:73:5:mbed::DigitalOut::DigitalOut(PinName, int)	24	static
 ../main-lcd.cpp:16:10:uint16_t rgb888_to_rgb565(uint32_t)	24	static
 ../main-lcd.cpp:33:6:void drawChar(int, int, int, int, const uint16_t*, uint16_t)	32	static
-../main-lcd.cpp:46:6:void drawFont(int, int, uint16_t, const uint16_t (*)[16])	40	static
-../main-lcd.cpp:56:6:void drawRectangle(int, int, int, int, uint16_t)	32	static
-../main-lcd.cpp:68:6:void drawCircle(int, int, int, uint16_t)	40	static
-../main-lcd.cpp:95:6:void drawLine(int, int, int, int, uint16_t)	48	static
-../main-lcd.cpp:133:6:void drawTriangle(int, int, int, int, int, int, uint16_t)	32	static
-../main-lcd.cpp:140:5:int main()	40	static
+../main-lcd.cpp:46:5:int numDigits(int)	16	static
+../main-lcd.cpp:54:6:void drawDigits(int, int, int, int, int, const uint16_t (*)[16], uint16_t)	48	static
+../main-lcd.cpp:68:6:void draw_score(int, int, uint16_t)	56	static
+../main-lcd.cpp:89:6:void drawFont(int, int, uint16_t, const uint16_t (*)[16])	40	static
+../main-lcd.cpp:99:6:void drawRectangle(int, int, int, int, uint16_t)	32	static
+../main-lcd.cpp:115:2:panel::panel(int)	24	static
+../main-lcd.cpp:121:6:int panel::get_y()	8	static
+../main-lcd.cpp:125:6:int panel::get_width()	8	static
+../main-lcd.cpp:129:6:int panel::get_height()	8	static
+../main-lcd.cpp:133:7:void panel::mooveUp()	24	static
+../main-lcd.cpp:144:7:void panel::mooveDown()	24	static
+../main-lcd.cpp:168:6:int ball::moove(int, int, int, int)	32	static
+../main-lcd.cpp:216:6:int ball::get_y()	8	static
+../main-lcd.cpp:220:5:int main()	104	static
 ../main-lcd.cpp:14:11:void __tcf_0(void*)	16	static
-../main-lcd.cpp:209:1:void __static_initialization_and_destruction_0(int, int)	16	static
-../main-lcd.cpp:209:1:cpp)	8	static
+../main-lcd.cpp:261:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../main-lcd.cpp:261:1:cpp)	8	static

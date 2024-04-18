@@ -43,6 +43,49 @@ void drawChar(int charHeight, int charWidth, int x, int y,
 	}
 }
 
+int numDigits(int number) {
+	int digits = 1;
+	while (number /= 10) {
+		digits++;
+	}
+	return digits;
+}
+
+void drawDigits(int score, int charHeight, int charWidth, int x, int y,
+		const uint16_t font_lsb[][FONT_HEIGHT], uint16_t Color) {
+	int num = score;
+	int digits = numDigits(score);
+
+	// Draw each digit
+	for (int i = digits - 1; i >= 0; i--) {
+		int digit = num % 10;
+		drawChar(charHeight, charWidth, x + i * charWidth, y,
+				font_lsb[48 + digit], Color); // Assuming font contains digits from '0' to '9'
+		num /= 10;
+	}
+}
+
+void draw_score(int l_score, int r_score, uint16_t Color) {
+	int charHeight = FONT_HEIGHT; // Assuming FONT_HEIGHT is defined somewhere
+	int charWidth = FONT_WIDTH;   // Assuming FONT_WIDTH is defined somewhere
+//    const uint16_t font_lsb[][FONT_HEIGHT] = {
+//        // Font data
+//    };
+
+	// Calculate the total width required for both scores
+	int totalWidth = charWidth * ((numDigits(l_score) + 1) + numDigits(r_score))
+			+ 1; // +1 for spacing
+
+	// Draw left score digits
+	drawDigits(l_score, charHeight, charWidth, (LCD_WIDTH - totalWidth) / 2, 0,
+			font_lsb, Color);
+
+	// Draw right score digits
+	drawDigits(r_score, charHeight, charWidth,
+			(LCD_WIDTH - totalWidth) / 2 + charWidth * (numDigits(l_score) + 1)
+					+ 1, 0, font_lsb, Color);
+}
+
 void drawFont(int charHeight, int charWidth, uint16_t Color,
 		const uint16_t font_lsb[][FONT_HEIGHT]) {
 	for (int i = 0; i < 256; i++) {
@@ -53,156 +96,165 @@ void drawFont(int charHeight, int charWidth, uint16_t Color,
 	}
 }
 
-void drawRectangle(int height, int widht, int x, int y, uint16_t Color) {
+void drawRectangle(int height, int width, int x, int y, uint16_t Color) {
 	for (int i = 0; i < height; i++) {
-		lcd_put_pixel(i + x, y, Color);
-		lcd_put_pixel(i + x, y + widht, Color);
-
-	}
-	for (int j = 0; j < widht; j++) {
-		lcd_put_pixel(x, y + j, Color);
-		lcd_put_pixel(x + height, y + j, Color);
+		for (int j = 0; j < width; j++) {
+			lcd_put_pixel(x + i, y + j, Color);
+		}
 	}
 }
 
-void drawCircle(int x0, int y0, int radius, uint16_t Color) {
-	int x = radius;
+class panel {
+private:
+	int height = 45;
+	int width = 5;
 	int y = 0;
-	int err = 0;
-
-	while (x >= y) {
-		lcd_put_pixel(x0 + x, y0 + y, Color);
-		lcd_put_pixel(x0 + y, y0 + x, Color);
-		lcd_put_pixel(x0 - y, y0 + x, Color);
-		lcd_put_pixel(x0 - x, y0 + y, Color);
-		lcd_put_pixel(x0 - x, y0 - y, Color);
-		lcd_put_pixel(x0 - y, y0 - x, Color);
-		lcd_put_pixel(x0 + y, y0 - x, Color);
-		lcd_put_pixel(x0 + x, y0 - y, Color);
-
-		if (err <= 0) {
-			y += 1;
-			err += 2 * y + 1;
-		}
-
-		if (err > 0) {
-			x -= 1;
-			err -= 2 * x + 1;
-		}
+	int x;
+	int speed = 4;
+public:
+	panel(int x) {
+		this->x = x;
+		this->y = (LCD_HEIGHT - this->height) / 2;
+		drawRectangle(this->width, this->height, this->x, this->y, 0xFFFF);
 	}
-}
 
-void drawLine(int x0, int y0, int x1, int y1, uint16_t Color) {
-	int dx = abs(x1 - x0);
-	int dy = abs(y1 - y0);
-	int sx, sy;
-
-	if (x0 < x1)
-		sx = 1;
-	else
-		sx = -1;
-
-	if (y0 < y1)
-		sy = 1;
-	else
-		sy = -1;
-
-	int err = dx - dy;
-	int e2;
-
-	while (true) {
-		lcd_put_pixel(x0, y0, Color);
-
-		if (x0 == x1 && y0 == y1)
-			break;
-
-		e2 = 2 * err;
-
-		if (e2 > -dy) {
-			err -= dy;
-			x0 += sx;
-		}
-
-		if (e2 < dx) {
-			err += dx;
-			y0 += sy;
-		}
+	int get_y() {
+		return this->y;
 	}
-}
 
-void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2,
-		uint16_t Color) {
-	drawLine(x0, y0, x1, y1, Color);
-	drawLine(x1, y1, x2, y2, Color);
-	drawLine(x2, y2, x0, y0, Color);
-}
+	int get_width() {
+		return this->width;
+	}
 
+	int get_height() {
+		return this->height;
+	}
+
+	void mooveUp() {
+		if ((this->y - this->speed) >= 0) {
+			y -= speed;
+			drawRectangle(this->width, this->speed, this->x, this->y, 0xFFFF);
+			drawRectangle(this->width, this->speed, this->x,
+					this->y + this->height, 0x0000);
+
+		} else
+			y = 0;
+	}
+
+	void mooveDown() {
+		if ((this->y + this->speed) <= (LCD_HEIGHT - this->height)) {
+			y += speed;
+			drawRectangle(this->width, this->speed, this->x,
+					this->y + this->height - this->speed, 0xFFFF);
+			drawRectangle(this->width, this->speed, this->x,
+					this->y - this->speed, 0x0000);
+		}
+
+		else
+			y = (LCD_HEIGHT - this->height);
+	}
+};
+
+class ball {
+private:
+	int x = LCD_WIDTH / 2;
+	int y = LCD_HEIGHT / 2;
+	int speed = 6;
+	int dx = speed;
+	int dy = -speed;
+	int radius = 5;
+public:
+
+	int moove(int l_platform_y, int r_platform_y, int platform_height,
+			int platform_width) { // int 0 - nohing; int 1 - left scored; int 2 - right scored
+		drawRectangle(this->radius, this->radius, this->x, this->y, 0x0000);
+		this->x += this->dx;
+		this->y += this->dy;
+
+		if (this->y < 0) {
+			this->y = 0;
+			this->dy *= -1;
+		}
+		if (this->y > (LCD_HEIGHT - this->radius)) {
+			this->y = (LCD_HEIGHT - this->radius);
+			this->dy *= -1;
+		}
+
+		if (this->dx < 0) {
+			if (this->x <= platform_width + this->speed + 2) {
+				if ((this->y + this->radius) < l_platform_y
+						|| this->y > (l_platform_y + platform_height)) {
+					this->x = LCD_WIDTH / 2;
+					this->y = LCD_HEIGHT / 2;
+					this->dx *= -1;
+
+					return 2;
+				} else {
+					this->dx *= -1;
+				}
+			}
+		}
+
+		if (this->dx > 0) {
+			if ((this->x + this->radius)
+					>= (LCD_WIDTH - platform_width - this->speed - 2)) {
+				if ((this->y + this->radius) < r_platform_y
+						|| this->y > (r_platform_y + platform_height)) {
+					this->x = LCD_WIDTH / 2;
+					this->y = LCD_HEIGHT / 2;
+					this->dx *= -1;
+
+					return 1;
+				} else {
+					this->dx *= -1;
+				}
+			}
+		}
+		drawRectangle(this->radius, this->radius, this->x, this->y, 0xFFFF);
+	}
+
+	int get_y() {
+		return this->y;
+	}
+};
 int main() {
-	lcd_init();				// LCD initialization
+	lcd_init();
+	panel left_panel(0);
+	panel right_panel(LCD_WIDTH - 10);
+	ball ball;
 
-	uint16_t l_color_red = 0xF800;
-	uint16_t l_color_green = 0x07E0;
-	uint16_t l_color_blue = 0x001F;
-	uint16_t l_color_white = 0xFFFF;
-	uint16_t l_color_black = rgb888_to_rgb565(0x000000);
+	int l_count = 0;
+	int r_count = 0;
 
-	int delete_status = 0;
-	int current_status = 1;
 	while (1) {
 
-//		drawFont(FONT_HEIGHT, FONT_WIDTH, l_color_red, font_msb);
-//		drawFont(FONT_HEIGHT, FONT_WIDTH, l_color_green, font_lsb);
-//		drawCircle(160, 120, 120, l_color_white);
-//		drawRectangle(100, 100, 10, 10, l_color_red);
-//		drawRectangle(100, 100, 10, 10, l_color_red);
-//		drawLine(10,10,120,100, l_color_red);
-//		drawTriangle(10,10,30,50,70,35, rgb888_to_rgb565(0xFF0000));
-//
-		// clean logic
-		if (delete_status == 1) {
-			drawFont(FONT_HEIGHT, FONT_WIDTH, l_color_black, font_msb);
-			delete_status = 0;
-		} else if (delete_status == 2) {
-			drawFont(FONT_HEIGHT, FONT_WIDTH, l_color_black, font_lsb);
-			delete_status = 0;
-		} else if (delete_status == 3) {
-			drawCircle(160, 120, 100, l_color_black);
-			delete_status = 0;
-		} else if (delete_status == 4) {
-			drawLine(10, 10, 200, 120, l_color_black);
-			drawLine(10, 120, 200, 10, l_color_black);
-			drawRectangle(190, 110, 10, 10, l_color_black);
-			delete_status = 0;
+		if (!butt[0].read()) {
+			left_panel.mooveUp();
+		} else if (!butt[1].read()) {
+			left_panel.mooveDown();
 		}
 
-		// draw logic
-		if (current_status == 1) {
-			drawFont(FONT_HEIGHT, FONT_WIDTH, l_color_blue, font_msb);
-		} else if (current_status == 2) {
-			drawFont(FONT_HEIGHT, FONT_WIDTH, l_color_green, font_lsb);
-		} else if (current_status == 3) {
-			drawCircle(160, 120, 100, l_color_white);
-		} else if (current_status == 4) {
-			drawLine(10, 10, 200, 120, l_color_white);
-			drawLine(10, 120, 200, 10, l_color_white);
-			drawRectangle(190, 110, 10, 10, l_color_white);
+
+		int move_res = ball.moove(left_panel.get_y(), right_panel.get_y(),
+				right_panel.get_height(), right_panel.get_width());
+
+		if (ball.get_y() > right_panel.get_y() + (right_panel.get_height()/2)) {
+			right_panel.mooveDown();
+		} else {
+			right_panel.mooveUp();
 		}
 
-		// btn logic
-		if (!butt[0].read() && current_status != 1) {
-			delete_status = current_status;
-			current_status = 1;
-		} else if (!butt[1].read() && current_status != 2) {
-			delete_status = current_status;
-			current_status = 2;
-		} else if (!butt[2].read() && current_status != 3) {
-			delete_status = current_status;
-			current_status = 3;
-		} else if (!butt[3].read() && current_status != 4) {
-			delete_status = current_status;
-			current_status = 4;
-		}
 
+		if (move_res != 0) {
+			draw_score(l_count, r_count, 0x0000);
+			if (move_res == 1) {
+				l_count++;
+			}
+			if (move_res == 2) {
+				r_count++;
+			}
+			draw_score(l_count, r_count, 0xFFFF);
+		}
 	}
 
 	return 0;
