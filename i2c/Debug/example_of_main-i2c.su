@@ -1,0 +1,19 @@
+/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.9.0.202307121226/tools/arm-none-eabi/include/c++/12.3.1/arm-none-eabi/thumb/v7e-m+fp/softfp/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	8	static
+/home/fei/yat0008/Desktop/controller/i2c/mbed-os/drivers/include/drivers/DigitalIn.h:67:5:mbed::DigitalIn::DigitalIn(PinName)	16	static
+/home/fei/yat0008/Desktop/controller/i2c/mbed-os/drivers/include/drivers/DigitalIn.h:86:5:mbed::DigitalIn::~DigitalIn()	16	static
+/home/fei/yat0008/Desktop/controller/i2c/mbed-os/drivers/include/drivers/DigitalIn.h:97:9:int mbed::DigitalIn::read()	16	static
+/home/fei/yat0008/Desktop/controller/i2c/mbed-os/drivers/include/drivers/DigitalIn.h:128:5:mbed::DigitalIn::operator int()	16	static
+/home/fei/yat0008/Desktop/controller/i2c/mbed-os/platform/include/platform/mbed_wait_api.h:132:13:void _wait_us_inline(unsigned int)	32	static
+../example_of_main-i2c.cpp:35:2:PCF::PCF(unsigned char)	8	static
+../example_of_main-i2c.cpp:38:7:void PCF::write(unsigned char)	24	static
+../example_of_main-i2c.cpp:79:7:void PCF::bar(unsigned char)	24	static
+../example_of_main-i2c.cpp:92:16:unsigned char PCF::read()	24	static
+../example_of_main-i2c.cpp:113:2:RADIO::RADIO()	8	static
+../example_of_main-i2c.cpp:114:7:void RADIO::setFreq(int)	16	static
+../example_of_main-i2c.cpp:141:6:int RADIO::readFreq()	32	static
+../example_of_main-i2c.cpp:177:7:void RADIO::setVolume(uint8_t)	16	static
+../example_of_main-i2c.cpp:192:7:void RADIO::FM_SEEK_UP()	16	static
+../example_of_main-i2c.cpp:204:7:void RADIO::FM_SEEK_DOWN()	16	static
+../example_of_main-i2c.cpp:225:5:int main()	32	static
+../example_of_main-i2c.cpp:385:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../example_of_main-i2c.cpp:385:1:cpp)	8	static
